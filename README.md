@@ -72,6 +72,52 @@ Atualiza uma URL encurtada.
 Redireciona para a URL original associada ao `shortUrl`.
 - **URL Example**: `http://localhost:4130/urls/redirect/abc123`
 
+## Documentação da API - Swagger
+
+Este projeto utiliza o **Swagger** para fornecer uma documentação interativa da API. O Swagger permite que você visualize e interaja com os endpoints da API de maneira fácil e eficiente.
+
+### Como acessar o Swagger
+
+Após rodar o servidor localmente, você pode acessar a documentação do Swagger navegando para a URL:
+
+```
+http://localhost:4130/api-docs
+```
+
+### Funcionalidades do Swagger
+
+- **Visualização de Endpoints**: A documentação exibe todos os endpoints disponíveis, incluindo o método HTTP, a URL e uma descrição de cada funcionalidade.
+- **Interatividade**: Você pode testar os endpoints diretamente na interface do Swagger, enviando requisições de exemplo e visualizando as respostas.
+
+### Exemplo de uso:
+
+1. **Registrar um usuário**
+   - Endpoint: `POST /auth/register`
+   - Parâmetros:
+     ```json
+     {
+       "name": "user",
+       "email": "user@example.com",
+       "password": "password"
+     }
+     ```
+   - Resposta esperada: Status 201 (Criado)
+
+2. **Encurtar uma URL**
+   - Endpoint: `POST /urls/shorten`
+   - Parâmetros:
+     ```json
+     {
+       "url": "https://www.example.com"
+     }
+     ```
+   - Resposta esperada: Status 201 (Criado) com o link encurtado
+
+3. **Redirecionar para URL original**
+   - Endpoint: `GET /urls/redirect/{shortUrl}`
+   - Parâmetros: `{shortUrl}` (Código da URL encurtada)
+   - Resposta esperada: Status 302 (Redirecionado)
+
 ## Testes Automatizados com Cypress
 
 O projeto usa o Cypress para testar as funcionalidades do encurtador de URLs. Os testes incluem as seguintes funcionalidades:
