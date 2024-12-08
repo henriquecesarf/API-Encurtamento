@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:18
+    container_name: url-shortener-app
+    working_dir: /src
+    volumes:
+      - .:/src
+    ports:
+      - "4130:4130"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=db        # Conexão com o banco via nome do serviço 'db'
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=url_shortener_db
+    depends_on:
+      - db
+    command: >
+      sh -c "
+        npm install &&
+        npm run dev
+      "
+    networks:
+      - url_shortener_network
+
+  db:
+    image: mysql:8.0
+    container_name: url-shortener-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=url_shortener_db
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - url_shortener_network
+    ports:
+      - "3308:3306"
+
+networks:
+  url_shortener_network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local

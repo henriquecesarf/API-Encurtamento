@@ -1,0 +1,7 @@
+# Terraform
+.github/
+terraform/
+aws/
+cypress/
+initdb/
+tests/
