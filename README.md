@@ -18,6 +18,35 @@ Este é um projeto de encurtador de URLs com testes automatizados usando **Cypre
 - **Banco de Dados (MySQL)**: Armazena as URLs encurtadas e os dados dos usuários.
 - **Cypress**: Framework de testes end-to-end para validar as funcionalidades do encurtador de URLs.
 
+## Instalação
+
+Para rodar o projeto localmente, siga as etapas abaixo:
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/seu-usuario/url-shortener.git
+cd url-shortener
+```
+
+### 2. Instalar as dependências
+
+```bash
+npm install
+```
+
+### 3. Rodar a aplicação
+
+```bash
+docker-compose up
+```
+
+### 4. Rodar os testes com Cypress
+
+```bash
+npx cypress open
+```
+
 ## Endpoints da API
 
 ### `POST /auth/register`
@@ -144,35 +173,6 @@ O projeto usa o Cypress para testar as funcionalidades do encurtador de URLs. Os
     ```bash
     npx cypress run
     ```
-
-## Instalação
-
-Para rodar o projeto localmente, siga as etapas abaixo:
-
-### 1. Clonar o repositório
-
-```bash
-git clone https://github.com/seu-usuario/url-shortener.git
-cd url-shortener
-```
-
-### 2. Instalar as dependências
-
-```bash
-npm install
-```
-
-### 3. Rodar a aplicação
-
-```bash
-docker-compose up
-```
-
-### 4. Rodar os testes com Cypress
-
-```bash
-npx cypress open
-```
 
 ## Exemplos de Testes com Cypress
 
