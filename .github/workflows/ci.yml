@@ -33,5 +33,15 @@ jobs:
           node-version: '18'
       - name: Install dependencies
         run: npm install
+
+      - name: Start server
+        run: npm start &
+      
+      - name: Wait for server to be ready
+        uses: jakejarvis/wait-action@v1
+        with:
+          url: 'http://localhost:4130'
+          timeout: '30'
+
       - name: Run tests with Cypress
         run: npx cypress run --spec "cypress/integration/urls.cy.js"
