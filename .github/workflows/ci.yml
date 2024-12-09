@@ -35,8 +35,8 @@ jobs:
         run: npm install
 
       - name: Start server
-        run: npm start &
-      
+        run: docker-compose up -build
+
       - name: Wait for server to be ready
         uses: jakejarvis/wait-action@v1
         with:
