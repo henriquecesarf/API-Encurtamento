@@ -35,7 +35,12 @@ cd url-shortener
 npm install
 ```
 
-### 3. Rodar a aplicação
+### 3. Rodar a aplicação pela primeira vez
+
+```bash
+docker-compose up --build
+```
+### 3.1. Rodar a aplicação
 
 ```bash
 docker-compose up
