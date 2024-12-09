@@ -30,11 +30,11 @@ jobs:
       - name: Install Docker Compose
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker-compose
+          sudo apt-get install -y docker-compose 
       - name: Build and Start Services
         run: docker-compose up --build -d
       - name: Run tests with Cypress
-        run: npx cypress run --spec "cypress/integration/urls.cy.js"
+        run: npx cypress run --spec "cypress/e2e/urls.cy.js"
       - name: Stop Docker Compose Services
         if: always()
         run: docker-compose down
