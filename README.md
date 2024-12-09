@@ -22,6 +22,16 @@ Este é um projeto de encurtador de URLs com testes automatizados usando **Cypre
 
 Para rodar o projeto localmente, siga as etapas abaixo:
 
+
+## Nota Importante
+
+Este projeto requer o **Node.js na versão 18** para funcionar corretamente. Antes de começar, certifique-se de que você instalou a versão 18 do Node.js. Para verificar, utilize o comando:
+
+```bash
+node -v
+```
+Se você não tiver a versão correta, faça o download em [Node.js](https://nodejs.org/pt).
+
 ### 1. Clonar o repositório
 
 ```bash
