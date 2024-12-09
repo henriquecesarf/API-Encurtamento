@@ -33,8 +33,6 @@ jobs:
           sudo apt-get install -y docker-compose
       - name: Build and Start Services
         run: docker-compose up --build -d
-      - name: Wait for server to be ready
-        run: npx wait-on http://localhost:4130
       - name: Run tests with Cypress
         run: npx cypress run --spec "cypress/integration/urls.cy.js"
       - name: Stop Docker Compose Services
